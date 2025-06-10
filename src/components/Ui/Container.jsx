@@ -1,6 +1,6 @@
 import React from 'react';
 import CanvasSlider from '../CanvasSlider/CanvasSlider';
-import ErrorBoundary from '../ErrorBoundry/ErrorBoundry';
+import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
 
 const Container = () => {
   const imageSources = [
@@ -13,9 +13,9 @@ const Container = () => {
   return (
     <div className="canvas-slider-wrapper">
       <h1 className="canvas-slider-title">Canvas Image Slider</h1>
-      <ErrorBoundary>
+      <ErrorBoundry>
         <CanvasSlider imageUrls={imageSources} />
-      </ErrorBoundary>
+      </ErrorBoundry>
       <p className="canvas-slider-description">Drag to change image</p>
     </div>
   );

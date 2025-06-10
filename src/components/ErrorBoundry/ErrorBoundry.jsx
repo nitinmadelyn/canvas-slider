@@ -2,7 +2,7 @@ import React from 'react';
 import './ErrorBoundry.css';
 import PropTypes from 'prop-types';
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundry extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false, error: null };
@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('ErrorBoundary caught:', error, errorInfo);
+    console.error('ErrorBoundry caught:', error, errorInfo);
   }
 
   render() {
@@ -36,8 +36,8 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-ErrorBoundary.propTypes = {
+ErrorBoundry.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ErrorBoundary;
+export default ErrorBoundry;

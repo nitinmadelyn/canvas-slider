@@ -1,4 +1,4 @@
-export const drawImagesToCanvas = (ctx, images, dragOffset, CANVAS_WIDTH, CANVAS_HEIGHT) => {
+export const drawImageToCanvas = (ctx, images, dragOffset, CANVAS_WIDTH, CANVAS_HEIGHT) => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     let xOffset = dragOffset;

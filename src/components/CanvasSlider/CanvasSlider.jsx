@@ -10,14 +10,14 @@ import './CanvasSlider.css';
 import { preloadImages } from '../../utils/preloadImages';
 import SkeletonLoader from '../SkeletonLoader/SkeletonLoader';
 import throttle from 'lodash.throttle';
-import { drawImagesToCanvas } from '../../utils/drawImageToCanvas';
+import { drawImageToCanvas } from '../../utils/drawImageToCanvas';
 import PropTypes from 'prop-types';
 
 /**
  * CanvasSlider component allows users to drag through a series of images on a canvas.
  * It supports both mouse and touch events for interaction.
  * @param {Object} props - Component properties.
- * @param {Array} props.imageSources - Array of image URLs to be displayed in the slider.
+ * @param {Array} props.imageUrls - Array of image URLs to be displayed in the slider.
  * @returns {JSX.Element} Rendered CanvasSlider component.
  */
 
@@ -74,7 +74,7 @@ const CanvasSlider = (props) => {
       });
   }, []);
 
-  // triggers ErrorBoundary
+  // triggers ErrorBoundry
   if (error) {
     throw error;
   }
@@ -94,7 +94,7 @@ const CanvasSlider = (props) => {
     canvasRef.current.width = CANVAS_WIDTH;
     canvasRef.current.height = CANVAS_HEIGHT;
 
-    drawImagesToCanvas(ctx, images, dragOffset, CANVAS_WIDTH, CANVAS_HEIGHT);
+    drawImageToCanvas(ctx, images, dragOffset, CANVAS_WIDTH, CANVAS_HEIGHT);
   }, [images, dragOffset]);
 
   const handleStart = useCallback(
@@ -145,7 +145,10 @@ const CanvasSlider = (props) => {
     [getClientX]
   );
 
-  const throttledHandleMove = useCallback(throttle(handleMove, 16), []);
+  const throttledHandleMove = useMemo(
+    () => throttle(handleMove, 16),
+    [handleMove]
+  );
 
   const handleEnd = useCallback(
     (e) => {
