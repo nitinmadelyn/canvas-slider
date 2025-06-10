@@ -1,0 +1,22 @@
+.error-boundary {
+  width: 640px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px #0000001a;
+  cursor: grab;
+  user-select: none;
+  background: transparent;
+}
+.error-message {
+  padding: 20px 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .error-boundary {
+    width: 320px;
+    height: 200px;
+  }
+  .error-message {
+    padding: 10px 30px;
+  }
+}
