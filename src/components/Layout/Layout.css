@@ -1,0 +1,7 @@
+.layout-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically */
+  padding: 2rem;
+}
