@@ -42,6 +42,7 @@ This project uses:
    ```bash
    git clone https://github.com/nitinmadelyn/canvas-slider.git
    cd canvas-slider
+   npm install
    ```
 
 2. **Serve the app from `/dist` folder:**
